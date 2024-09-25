@@ -1,7 +1,67 @@
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Opening Links in an iFrame</title>
+	<style>
+		iframe {
+			width: 100%;
+			height: 500px;
+		}
+		button {display: inline-block;}
+		iframe { width="50%";}
+	</style>
+</head>
 <body>
-<iframe src=iframe.php?url=”https://google.com/">
-</iframe>
-</body>
-</html>
+    <p style="text-align: center;">Communiation Between 'parent' and 'iframe Child' elements
+<button  onclick="Function_1()">1</button>
+<button  onclick="Function_2()">2</button>
+<button  onclick="Function_3()">3</button>
+<button  onclick="Function_4()">4</button>
+	<p id="paragraph_1">  empty  </p>
+    <iframe id="iFrame1" src="SomeLocalLinks-01.html" name="iFrame1"></iframe>
+<script>
+	var links = iFrame1.document.querySelectorAll( 'a' );
+	for ( var c = 0; c < links.length; c ++ ) {
+         links[c].addEventListener('click', WhichLinkWasClicked);
+      }
+function WhichLinkWasClicked(evt) {
+    alert( evt.target ) ; 
+    evt.preventDefault();
+		}
+</script>
+<script>
+function Function_1(){
+console.log("Function-1()")
+const iFrame1 = document.querySelector("iFrame");
+  console.log(iFrame1)
+const iFrame1Body = iFrame1.Document.querySelector("a") ;
+  console.log(iFrame1Body)
+
+
+/*
+var iframe1DocumentBody = iFrame1.document.querySelector("body");
+  console.log(iframeDocumentBody)
+  console.log(iframe.document)
+  console.log(iframe.document.querySelector("a"));
+    console.log(iframe);
+  iframe = iframe.document.documentElement
+  console.log(iframe);
+  document.getElementById("paragraph_1").innerHTML = iframe ;
+*/
+}
+</script>
+<script>
+function Function_2()
+{
+alert("Function-2()")}
+</script>
+<script>
+function Function_3(){
+alert("Function-3()")}
+</script>
+<script>
+function Function_4(){
+alert("Function-4()")}
+</script>
+
+</body></html>
